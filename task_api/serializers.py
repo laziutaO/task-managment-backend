@@ -1,10 +1,6 @@
 from rest_framework import serializers
 from task_api  import models
 
-
-class HelloSerializer(serializers.Serializer):
-    """Serializers a name field for testing APIView"""
-    name = serializers.CharField(max_length=10)
     
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializers a user profile object"""
@@ -36,4 +32,12 @@ class UserProfileSerializer(serializers.ModelSerializer):
         )
 
         return user
+    
+class ProfileTaskSerializer(serializers.ModelSerializer):
+    """Serializers profile tasks"""
+
+    class Meta:
+        model = models.ProfileTask
+        fields = ('id', 'user_profile', 'task_text', 'completed_box', 'created_on')
+        extra_kwargs = {'user_profile': {'read_only': True}}
     
