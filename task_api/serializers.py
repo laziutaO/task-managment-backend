@@ -2,6 +2,10 @@ from rest_framework import serializers
 from task_api  import models
 
 
+class HelloSerializer(serializers.Serializer):
+    """Serializers a name field for testing APIView"""
+    name = serializers.CharField(max_length=10)
+    
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializers a user profile object"""
 
