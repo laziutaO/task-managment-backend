@@ -40,4 +40,13 @@ class ProfileTaskSerializer(serializers.ModelSerializer):
         model = models.ProfileTask
         fields = ('id', 'user_profile', 'task_text', 'completed_box', 'created_on')
         extra_kwargs = {'user_profile': {'read_only': True}}
+
+class TopicSerializer(serializers.ModelSerializer):
+    """Serializers profile tasks"""
+
+    class Meta:
+        model = models.Topic
+        fields = ('id', 'user_profile', 'topic_name', 'created_on')
+        extra_kwargs = {'user_profile': {'read_only': True},
+                        'created_on': {'read_only': True}}
     

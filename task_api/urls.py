@@ -5,9 +5,13 @@ from task_api import views
 
 router = DefaultRouter()
 router.register('profile', views.UserProfileViewSet)
-router.register('task', views.UserProfileTaskVeiwSet)
+router.register('topic', views.UserProfileTopicVeiwSet)
+
+task_router = DefaultRouter()
+task_router.register('task', views.UserProfileTaskVeiwSet)
 
 urlpatterns = [
     path('login/', views.UserLoginApiView.as_view()),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('topic/', include(task_router.urls))
 ]
