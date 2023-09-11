@@ -62,6 +62,8 @@ class ProfileTask(models.Model):
     completed_box = models.BooleanField()
     created_on = models.DateTimeField(auto_now_add = True)
 
+    REQUIRED_FIELDS = ['task_text']
+
     def __str__(self):
         """Return the model as a string"""
         return self.status_text
@@ -74,6 +76,8 @@ class Topic(models.Model):
     )
     topic_name = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add = True)
+
+    REQUIRED_FIELDS = ['topic_name']
 
     def __str__(self):
         """Return the model as a string"""

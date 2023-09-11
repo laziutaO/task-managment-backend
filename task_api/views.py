@@ -31,6 +31,8 @@ class UserProfileTaskVeiwSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProfileTaskSerializer
     queryset = models.ProfileTask.objects.all()
     permission_classes = (permissions.UpdateOwnTask, IsAuthenticated)
+    filter_backends = (filters.SearchFilter, )
+    search_fields = ('task_text',)
 
     def perform_create(self, serializer):
         """Sets the user profile to the logged in user"""

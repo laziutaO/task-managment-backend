@@ -13,5 +13,5 @@ task_router.register('task', views.UserProfileTaskVeiwSet)
 urlpatterns = [
     path('login/', views.UserLoginApiView.as_view()),
     path('', include(router.urls)),
-    path('topic/', include(task_router.urls))
+    path('topic/<int:id>/', include(task_router.urls))
 ]

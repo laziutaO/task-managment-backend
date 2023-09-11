@@ -42,7 +42,7 @@ class ProfileTaskSerializer(serializers.ModelSerializer):
         extra_kwargs = {'user_profile': {'read_only': True}}
 
 class TopicSerializer(serializers.ModelSerializer):
-    """Serializers profile tasks"""
+    """Serializers profile topics"""
 
     class Meta:
         model = models.Topic
