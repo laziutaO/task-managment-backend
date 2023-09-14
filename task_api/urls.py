@@ -10,6 +10,7 @@ router.register('profile/<int:profile_id>/topic', views.UserProfileTopicVeiwSet)
 
 urlpatterns = [
     path('login/', views.UserLoginApiView.as_view()),
-    path('', include(router.urls)),
+    #path('task/', views.UserProfileTaskVeiwSet.as_view()),
+    #path('', include(router.urls)),
 
 ]
