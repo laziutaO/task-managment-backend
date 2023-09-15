@@ -39,7 +39,7 @@ class UserProfileTaskVeiwSet(viewsets.ModelViewSet):
         serializer.save(user_profile=self.request.user)
 
 class UserProfileTopicVeiwSet(viewsets.ModelViewSet):
-    """Handles creating, reading and updating profile tasks"""
+    """Handles creating, reading and updating profile topics"""
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.TopicSerializer
     queryset = models.Topic.objects.all()
